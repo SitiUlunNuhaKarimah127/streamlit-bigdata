@@ -9,13 +9,13 @@ new_text = [st.text_area("Masukkan Artikel Berita")]
 
 button = st.button("Submit")
 
+# Inisialisasi sesi Spark
+spark = SparkSession.builder.appName("KlasifikasiBerita").getOrCreate()
+
+# Load the saved model
+model = PipelineModel.load("model")
 if button:
     label = {0.0 : "Edu", 1.0 : "Sport", 2.0 : "Food"}
-    # Inisialisasi sesi Spark
-    spark = SparkSession.builder.appName("KlasifikasiBerita").getOrCreate()
-
-    # Load the saved model
-    model = PipelineModel.load("model")
     
     # membuat dataframe spark
     df = spark.createDataFrame([(text,) for text in new_text], ["stopwords"])
