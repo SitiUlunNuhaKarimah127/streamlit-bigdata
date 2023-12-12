@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.Tokenizer","timestamp":1702405916753,"sparkVersion":"3.5.0","uid":"Tokenizer_e60b2c23aff3","paramMap":{"outputCol":"Tokenizing","inputCol":"stopwords"},"defaultParamMap":{"outputCol":"Tokenizer_e60b2c23aff3__output"}}
